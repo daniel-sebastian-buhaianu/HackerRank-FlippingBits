@@ -10,21 +10,15 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Result {
-
-    /*
-     * Complete the 'flippingBits' function below.
-     *
-     * The function is expected to return a LONG_INTEGER.
-     * The function accepts LONG_INTEGER n as parameter.
-     */
-
-    public static long flippingBits(long n) {
-        long signedResult = ~n;
-        long unsignedResult = signedResult & 0xFFFFFFFFL;
-        return unsignedResult;
+class Result
+{
+    public static long flippingBits(long n)
+    {
+        // Define the 32-bit mask, which is all bits set to 1
+        long MASK = 0xFFFFFFFFL;
+        // Flip the bits using XOR
+        return n ^ MASK;
     }
-
 }
 
 public class Solution {
